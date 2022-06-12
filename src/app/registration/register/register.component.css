@@ -1,0 +1,75 @@
+ .container{
+    margin-top: 50px;;
+    width: 550px;
+}
+
+/*
+#userAddButtonBox1 {
+    width: 125px;
+    display:inline-block;
+    margin-left: 0;
+    margin: 0 10px 0 0;
+}
+
+#userAddButtonBox2 {
+    width: 100px;
+    display:inline-block;
+    margin-left: 0;
+    margin: 0 10px 0 0;
+} */
+.main{
+    background: orange;
+    height: 100%;
+    display: flex;
+}
+.left-container{
+    background: #F9F9F9;
+    padding: 20px;
+    flex: 70%;
+}
+.right-container{
+    background: #004369;
+    padding: 20px;
+    flex: 30%;
+}
+
+.user-form-container{
+    
+    text-align: center;
+
+}
+
+.branding-form{
+    font-size: 1.8rem;
+}
+
+.branding-form-label{
+    font-size: 2rem;
+}
+
+
+.form-user-name-section{
+    display: flex;
+
+}
+.user-name-section-left{
+    text-align: left;
+    margin-right: 2.5px;
+
+}
+.user-name-section-right{
+    text-align: left;
+    margin-left: 2.5px;
+}
+.custom-input-styles{
+    border: 1px solid #C5C5C5;
+    margin-top: 10px;
+    font-size: 1.25rem;
+    padding: 5px;
+    outline:  none;
+}
+
+label{
+    color: #7D7D7D;
+    font-weight: bold;
+}

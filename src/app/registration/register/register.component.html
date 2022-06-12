@@ -1,0 +1,243 @@
+<!-- <div class="container">
+    <div class="card">   
+        <h2 class="card-header">Add User Account</h2>
+        <div class="card-body">
+            <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()" id="addUserForm">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="fname"
+                    formControlName="fname"
+                    [ngClass]="{ 'is-invalid': f.fname.errors && f.fname.dirty }"/>
+                    <div *ngIf="f.fname.errors && f.fname.dirty" class="invalid-feedback">
+                        <div *ngIf="f.fname.errors.required && f.fname.dirty">First Name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="lname"
+                    formControlName="lname"
+                    [ngClass]="{ 'is-invalid': f.lname.errors && f.lname.dirty }"/>
+                    <div *ngIf="f.lname.errors && f.lname.dirty" class="invalid-feedback">
+                        <div *ngIf="f.lname.errors.required && f.lname.dirty">Last Name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    formControlName="address"
+                    [ngClass]="{ 'is-invalid': f.address.errors && f.address.dirty }"/>
+                    <div *ngIf="f.address.errors && f.address.dirty" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required && f.address.dirty">Address is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    formControlName="email"
+                    [ngClass]="{ 'is-invalid': f.email.errors && f.email.dirty }"
+                    [ngClass]="{ 'is-invalid': isDuplicate }"/>
+                    Dirty: {{ f.email.dirty }}
+                    <div *ngIf="f.email.errors && f.email.dirty" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required && f.email.dirty">Email Address is required</div>
+                        <div *ngIf="f.email.errors.email && f.email.dirty">Entry must be an email</div>
+                    </div>
+                    <div *ngIf="isDuplicate" class="invalid-feedback">
+                        <div *ngIf="isDuplicate">Email Address already exists</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactnum">Contact Number</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="contactnum"
+                    formControlName="contactnum"
+                    [ngClass]="{ 'is-invalid': f.contactnum.errors && f.contactnum.dirty}"/>
+                    <div *ngIf="f.contactnum.errors && f.contactnum.dirty" class="invalid-feedback">
+                        <div *ngIf="f.contactnum.errors.required && f.contactnum.dirty">Contact Number is required</div>
+                        <div *ngIf="f.contactnum.errors.pattern && f.contactnum.dirty">Contact Number must only contain numbers</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rpassword">Password</label>
+                    <input
+                    type="password"
+                    class="form-control"
+                    name="rpassword"
+                    formControlName="rpassword"
+                    [ngClass]="{ 'is-invalid': f.rpassword.errors && f.rpassword.dirty}"/>
+                    <div *ngIf="f.rpassword.errors && f.rpassword.dirty" class="invalid-feedback">
+                        <div *ngIf="f.rpassword.errors.required && f.rpassword.dirty">Password is required</div>
+                        <div *ngIf="f.rpassword.errors.minlength && f.rpassword.dirty">Password must be 6 characters</div>
+                    </div>
+                </div>
+
+            </form>
+            <button class="btn btn-dark" form="addUserForm" id="userAddButtonBox1" [disabled]="!addUserForm.valid">Add</button>
+            <button class="btn btn-light" id="userAddButtonBox2" routerLink="/login">Cancel</button>
+        </div>
+    </div>
+</div> -->
+
+    <div class="main" style="">
+
+		<div class="left-container">
+			
+			<div class="user-form-container">
+				<br />
+				<div class="branding-form">We Go R’nR</div>
+				<div class="branding-form-label"><b>Create an account</b></div>
+
+				<br />
+
+				<div class="form-main-container" style="margin: 0 30%;">
+					<form [formGroup]="addUserForm" (ngSubmit)="onSubmit()" id="addUserForm" style="padding: 2.5% 10%">
+						<div class="form-user-name-section">
+							<div class="user-name-section-left">
+								<div >
+									<label>First Name</label><br />
+									<input
+                                    style="width: 100%;"
+                                    type="text"
+                                    class="form-control custom-input-styles"
+                                    name="fname"
+                                    formControlName="fname"
+                                    [ngClass]="{ 'is-invalid': f.fname.errors && f.fname.dirty }">
+                                    <div *ngIf="f.fname.errors && f.fname.dirty" class="invalid-feedback">
+                                        <div *ngIf="f.fname.errors.required && f.fname.dirty">First Name is required</div>
+                                    </div>
+								</div>
+							</div>
+							<div class="user-name-section-right">
+								<div style="">
+									<label>Last Name</label><br />
+									<input
+                                    style="width: 100%;"
+                                    type="text"
+                                    class="custom-input-styles form-control"
+                                    name="lname"
+                                    formControlName="lname"
+                                    [ngClass]="{ 'is-invalid': f.lname.errors && f.lname.dirty }">
+                                    <div *ngIf="f.lname.errors && f.lname.dirty" class="invalid-feedback">
+                                        <div *ngIf="f.lname.errors.required && f.lname.dirty">Last Name is required</div>
+                                    </div>
+								</div>
+							</div>
+						</div>
+						<br />
+						<div class="" style="text-align: left;">
+							<label>Address</label><br />
+							<input
+                            style="width: 100%;"
+                            type="text"
+                            class="form-control custom-input-styles"
+                            name="address"
+                            formControlName="address"
+                            [ngClass]="{ 'is-invalid': f.address.errors && f.address.dirty }">
+                            <div *ngIf="f.address.errors && f.address.dirty" class="invalid-feedback">
+                                <div *ngIf="f.address.errors.required && f.address.dirty">Address is required</div>
+                            </div>
+						</div>
+						<br />
+						<div class="" style="text-align: left;">
+							<label>Email</label><br />
+							<input
+                            style="width: 100%;"
+                            type="text"
+                            class="form-control custom-input-styles"
+                            name="email"
+                            formControlName="email"
+                            [ngClass]="{ 'is-invalid': f.email.errors && f.email.dirty }"
+                            [ngClass]="{ 'is-invalid': isDuplicate }">
+                            <div *ngIf="f.email.errors && f.email.dirty" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required && f.email.dirty">Email Address is required</div>
+                                <div *ngIf="f.email.errors.email && f.email.dirty">Entry must be an email</div>
+                            </div>
+                            <div *ngIf="isDuplicate" class="invalid-feedback">
+                                <div *ngIf="isDuplicate">Email Address already exists</div>
+                            </div>
+						</div>
+						<br />
+						<div class="" style="text-align: left;">
+							<label>Contact</label><br />
+							<input
+                            style="width: 100%;"
+                            type="text"
+                            class="form-control custom-input-styles"
+                            name="contactnum"
+                            formControlName="contactnum"
+                            [ngClass]="{ 'is-invalid': f.contactnum.errors && f.contactnum.dirty}">
+                            <div *ngIf="f.contactnum.errors && f.contactnum.dirty" class="invalid-feedback">
+                                <div *ngIf="f.contactnum.errors.required && f.contactnum.dirty">Contact Number is required</div>
+                                <div *ngIf="f.contactnum.errors.pattern && f.contactnum.dirty">Contact Number must only contain numbers</div>
+                            </div>
+						</div>
+						<br />
+						<div class="" style="text-align: left;">
+							<label>Password</label><br />
+							<input
+                            style="width: 100%;"
+                            type="password"
+                            class="form-control custom-input-styles"
+                            name="rpassword"
+                            formControlName="rpassword"
+                            [ngClass]="{ 'is-invalid': f.rpassword.errors && f.rpassword.dirty}">
+                            <div *ngIf="f.rpassword.errors && f.rpassword.dirty" class="invalid-feedback">
+                                <div *ngIf="f.rpassword.errors.required && f.rpassword.dirty">Password is required</div>
+                                <div *ngIf="f.rpassword.errors.minlength && f.rpassword.dirty">Password must be 6 characters</div>
+                            </div>
+						</div>
+						<br />
+						<div class="" style="text-align: left;">
+							
+							<button style="width: 100%;background: #004369;color: #ffffff;padding: 10px;outline: none;border: none;"
+                            class="btn btn-dark custom-input-styles" 
+                            form="addUserForm" 
+                            id="userAddButtonBox1" 
+                            [disabled]="!addUserForm.valid">Sign In</button>
+						</div>
+						<br />
+						
+						<div style="line-height: 1.5;">
+							By clicking Submit, you agree to our terms and conditions and privacy policy 
+						</div>
+						<br />
+						<div>
+							Already have an account? <a class="btn btn-light" id="userAddButtonBox2" routerLink="/login" style="text-decoration: underline;color:#004369;cursor: pointer">Sign In</a>
+						</div>
+					</form>
+                    <br />
+                    <br />
+                   
+				</div>
+
+
+			</div>
+
+
+		</div>
+    		
+    	<div class="right-container">
+        	<div class="half-containers">
+        	</div>
+       		
+    	</div>
+
+	</div>

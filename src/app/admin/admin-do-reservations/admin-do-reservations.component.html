@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="col">
+        <app-reserve-add
+            [sendCarList]="carList"
+        ></app-reserve-add>
+    </div>
+    <div class="col-8">
+        <app-reserve-list
+            [sendRentalList]="rentalList"
+            (selectedRental)="onEdit($event)"
+        ></app-reserve-list>
+    </div>
+    <div clss="col" *ngIf="editing">
+        <app-reserve-detail
+            [sendRentalInfo]="selectedRentalInfo"
+            [sendCarList]="carList"
+            (editStatus)="editComplete($event)"
+        ></app-reserve-detail>
+    </div>
+</div>>

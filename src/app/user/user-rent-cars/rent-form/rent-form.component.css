@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+}
+
+.box1{
+    float: left;
+    width: 350px;
+    margin-left: 10px;
+}
+
+.box2{
+    float: left;
+    width: 350px;
+    margin-left: 10px;
+}
+
+#buttonBox1 {
+    width: 175px;
+    height: 40px;
+    display:inline-block;
+    margin: 0 0 0 60px;
+}
+
+.result{
+    margin-top: 10px;
+}
+
+#result{
+    padding: 20px 0 20px 0;
+    text-align:center;
+    background-color: bisque;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+}
+
+label{
+    margin: 0;
+    font-weight: bolder;
+}
+
+

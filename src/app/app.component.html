@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+
+    <div>
+      <div>
+        <a class="navbar-brand"><b>We Go R<span class="colored">’</span>nR</b></a>
+      </div>
+      <div class="brand-tagline">Wheels go round and round.</div>
+    </div>
+
+  <!-- If login page {{checkIfLogPage()}} <br />
+  If logged In {{checkIfLoggedIn()}} -->
+
+    <!-- USER Nav (Not Logged In) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width: 89%">
+      <ul class="navbar-nav ml-auto" *ngIf="!checkIfLoggedIn()">
+        <li class="nav-item px-3">
+          <a class="nav-link" routerLink = "" >Home</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" routerLink = "registration">Register</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" routerLink = "userRentals">Sign In</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- USER Nav Bar (Logged In) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" *ngIf="!checkIfAdmin() && checkIfLoggedIn() && !checkIfLogPage()">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink = "userHome">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink = "userRent">Rent</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink = "userRentals">Rentals</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink = "userHistory">History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="logOut()">Log Out</a>
+        </li>
+    </ul>
+
+
+    <!-- ADMIN Nav Bar -->
+    <ul class="navbar-nav mr-auto" *ngIf="checkIfAdmin() && checkIfLoggedIn() && !checkIfLogPage()">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink = "admin">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink = "adminUsers">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink = "adminCars">Cars</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink = "adminReservations">Reservations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

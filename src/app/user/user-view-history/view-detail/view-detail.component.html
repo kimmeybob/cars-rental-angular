@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">   
+        <h2 class="card-header">Rental Details</h2>
+        <div class="card-body">
+            <div>
+                <label>Renter Information</label>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-1 px-2">{{HistoryDetail.firstName+" " + HistoryDetail.lastName}}</li>
+                    <li class="list-group-item py-1 px-2">{{HistoryDetail.address}}</li>
+                    <li class="list-group-item py-1 px-2">{{HistoryDetail.email}}</li>
+                    <li class="list-group-item py-1 px-2">{{HistoryDetail.contactNumber}}</li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <label>Car Information</label>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-1 px-2">{{specificCar.model}}</li>
+                    <li class="list-group-item py-1 px-2">{{specificCar.brand}}</li>
+                    <li class="list-group-item py-1 px-2">{{specificCar.type}}</li>
+                    <li class="list-group-item py-1 px-2">{{specificCar.transmission}}</li>
+                    <li class="list-group-item py-1 px-2">{{specificCar.seats+" Seater"}}</li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <label>Rental Duration Information</label>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-1 px-2">{{HistoryDetail.rentStartDate}}</li>
+                    <li class="list-group-item py-1 px-2">{{HistoryDetail.rentEndDate}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

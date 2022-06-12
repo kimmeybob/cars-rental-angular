@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-9">
+        <app-view-rentals-list
+             [sendRentalList]="rentalList"
+             [sendUserInfo]="userList[userIndex]"
+             (selectedRental)="onDetail($event)"
+        ></app-view-rentals-list>
+    </div>
+    <div *ngIf="detail">
+        <app-view-rental-detail
+            [sendRentalDetail]="selectedRentalDetail"
+            [sendRentalList]="rentalList"
+            [sendCarList]="carList"
+            [sendUserInfo]="userList[userIndex]"
+            (detailStatus)="detailComplete($event)"
+        ></app-view-rental-detail>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+nav{
+    font-family: inter;
+}
+
+.navbar{
+    background-color: #ffffff;
+}
+.navbar-brand{
+    color:black;
+    pointer-events: none;
+    font-size: 1.7rem;
+}
+.colored{
+    color: #004369;
+}
+.brand-tagline{
+    margin-top: -10px;
+    font-size: 0.8rem;
+}
+.collapse navbar-collapse {
+    color: black;
+  
+}
