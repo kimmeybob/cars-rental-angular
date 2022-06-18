@@ -104,30 +104,21 @@
                           <div style="background: none;width: 223px;padding: 10px 10px;overflow: hidden;">
                               <!-- Item Title -->
                               <div style="background: none;font-size: 1rem;font-weight: bold;width: 92%;margin-bottom: 10px;">
-                                  <!-- {{ car.model  }} -->
+                                {{rent.carModel}}
                               </div>
                               <!-- Item Title -->
                               <div style="font-size: 0.8rem;font-weight: bold;display: flex;overflow: hidden;width: 92%;">
-                                  <!-- brand Tag -->
+                                  <!-- Start and End Date Tag -->
                                   <div style="margin-bottom: 0px;">
                                       <span id="addMarginRight"
-                      ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
-                      >
-                      <!-- {{ car.brand }} -->
-                    </span>
-                              
-                                  <!-- Category Tag -->
-                      <span id="addMarginRight"
-                      ><i class="bi bi-truck" style="margin-right: 5px"></i
-                      >
-                      <!-- {{ car.type }} -->
+                      ><i class="bi bi-calendar-date-fill" style="margin-right: 5px;"></i>{{rent.rentStartDate + " | " + rent.rentEndDate}}
                     </span>
                       <br />
-                                  <!-- Transmission Tag -->
+                                  <!-- Address Tag -->
                       <span id="addMarginRight"
                       ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
                       >
-                      <!-- {{ car.transmission }} -->
+                      {{ rent.address }} 
                     </span>
                                 </div>
                               </div>

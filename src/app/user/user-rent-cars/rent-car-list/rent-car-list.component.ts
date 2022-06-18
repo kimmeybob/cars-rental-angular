@@ -14,7 +14,7 @@ export class RentCarListComponent implements OnInit {
   displayList = [] as any;
 
   p: number = 1;
-  count: number = 5;
+  count: number = 8;
 
   constructor(private cservice: CarsService) {}
   
