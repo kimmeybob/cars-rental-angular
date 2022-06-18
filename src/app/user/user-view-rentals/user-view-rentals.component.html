@@ -1,7 +1,8 @@
-<div class="container">
-    <div class="col-9">
+<div class="main-container" id="main">
+    <div class="" style="background: #F4F4F4;">
         <app-view-rentals-list
              [sendRentalList]="rentalList"
+             [sendCarList]="carList"
              [sendUserInfo]="userList[userIndex]"
              (selectedRental)="onDetail($event)"
         ></app-view-rentals-list>

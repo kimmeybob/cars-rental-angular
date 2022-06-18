@@ -46,6 +46,7 @@ export class UserViewRentalsComponent implements OnInit {
   onDetail(rentalID: any){
     this.detail = true;
     this.selectedRentalDetail = this.rservice.getSpecificRent(rentalID, this.rentalList);
+    
   }
 
   detailComplete(value: any){

@@ -21,3 +21,46 @@
     height: 40px;
     float:left;
 }
+
+/* ------------------- New ------------------ */
+
+#viewAllButton {
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    
+}
+
+#cardButtons {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+#addMarginRight {
+    margin-right: 20px;
+}
+
+.filterBar {
+    width: 150px;
+    height: 40px;
+    float:left;
+}
+
+.custom-select{
+    background: none;
+    width: 100%;
+    border: 1px solid #DBDBDB;
+    padding: 10px 10px;
+    outline: none;
+}
+
+/*Grid CSS*/
+.grid-container {
+  display: grid;
+  /* grid-template-columns: auto auto auto auto; */
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-gap: 2rem;
+  background-color: none;
+  padding: 0px;
+}

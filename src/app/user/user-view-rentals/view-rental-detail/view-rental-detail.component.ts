@@ -37,11 +37,12 @@ export class ViewRentalDetailComponent implements OnInit {
     cancelDt.setDate(cancelDt.getDate() - 7);
     cancelDt = new Date(cancelDt).setHours(0, 0, 0, 0);
 
+    //Side Note: this.cancel = false (to enable cancellation of Renting.)
     if(this.currentDate < cancelDt){
       this.cancel = false;  
     }
     else{
-      this.cancel = true;
+      this.cancel = false;
     }
   }
 
