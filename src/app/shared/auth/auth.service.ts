@@ -45,7 +45,7 @@ export class AuthService {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
     .then ((result) => {
       this.SetUserData(result.user);
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
       this.pop.userRegistered();
     }).catch((error) => {
       window.alert(error.message);

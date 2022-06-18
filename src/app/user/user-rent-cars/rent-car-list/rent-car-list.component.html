@@ -1,107 +1,167 @@
-<div class="container">
-    <div class="row">
+<div class="row">
 
-      <div>
-        <button class="btn btn-dark" id="viewAllButton" (click)="displayAll()">
-          View All
-        </button>
-      </div>
+  
+<div style="
+z-index: 0;
+background: #F4F4F4;
+width: 100%;
+height: calc(100% - (20px * 2));
+padding: 20px 0;
+display: flex;">
+	
+	<!-- Filter Section -->
+	<div style="background: none;width: 360px;padding: 20px;">
+		
+		<div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 590px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
 
-      <div class="col">
-        <select class="filterBar" (change)="onChangeBrand($event)">
-          <option disabled selected value style="display: none">Brand</option>
-          <option value="Toyota">Toyota</option>
-          <option value="Mitsubishi">Mitsubishi</option>
-          <option value="Nissan">Nissan</option>
-          <option value="Honda">Honda</option>
-          <option value="Isuzu">Isuzu</option>
-          <option value="Hyundai">Hyundai</option>
-          <option value="KIA">KIA</option>
-          <option value="Ford">Ford</option>
-        </select>
-        <select class="filterBar" (change)="onChangeType($event)">
-          <option disabled selected value style="display: none">Type</option>
-          <option value="Sedan">Sedan</option>
-          <option value="SUV">SUV</option>
-          <option value="Minivan">Minivan</option>
-          <option value="Hatchback">Hatchback</option>
-          <option value="Pickup Truck">Pickup Truck</option>
-        </select>
-        <select class="filterBar" (change)="onChangeTransmission($event)">
-          <option disabled selected value style="display: none">
-            Transmission
-          </option>
-          <option value="Manual">Manual</option>
-          <option value="Automatic">Automatic</option>
-        </select>
-        <select class="filterBar" (change)="onChangeSeats($event)">
-          <option disabled selected value style="display: none">
-            No. of Seats
-          </option>
-          <option value="2">2 - Seater</option>
-          <option value="4">4 - Seater</option>
-          <option value="7">7 - Seater</option>   
-        </select>
-      </div>
-    </div>
-    
-    <br />
+				<div style="font-size: 1.5rem;font-weight: bold;">Car Filters</div>
+				<br />
+				<div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Brand</div>
+				<div style="background: none;">
+					<select class="filterBar custom-select" (change)="onChangeBrand($event)" style="height: 48px;">
+						<option disabled selected value style="display: none">Brand</option>
+						<option value="Toyota">Toyota</option>
+						<option value="Mitsubishi">Mitsubishi</option>
+						<option value="Nissan">Nissan</option>
+						<option value="Honda">Honda</option>
+						<option value="Isuzu">Isuzu</option>
+						<option value="Hyundai">Hyundai</option>
+						<option value="KIA">KIA</option>
+						<option value="Ford">Ford</option>
+					  </select>
+				</div>
 
-    <div class="row">
-      <div
-        class="col-12 card"
+				<br />
+				<br />
+				<br />
+				<div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Category</div>
+				<div style="background: none">
+					<select class="filterBar custom-select" (change)="onChangeType($event)" style="height: 48px;">
+						<option disabled selected value style="display: none">Type</option>
+						<option value="Sedan">Sedan</option>
+						<option value="SUV">SUV</option>
+						<option value="Minivan">Minivan</option>
+						<option value="Hatchback">Hatchback</option>
+						<option value="Pickup Truck">Pickup Truck</option>
+					</select>
+				</div>
+
+				<br />
+				<br />
+				<br />
+				<div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Transmission</div>
+				<div style="background: none">
+					<select class="filterBar custom-select" (change)="onChangeTransmission($event)" style="height: 48px;">
+						<option disabled selected value style="display: none">
+						  Transmission
+						</option>
+						<option value="Manual">Manual</option>
+						<option value="Automatic">Automatic</option>
+					</select>
+				</div>
+
+				<br />
+				<br />
+				<br />
+				<div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Seat Load</div>
+				<div style="background: none">
+					<select class="filterBar custom-select" (change)="onChangeSeats($event)" style="height: 48px;">
+						<option disabled selected value style="display: none">
+						  No. of Seats
+						</option>
+						<option value="2">2 - Seater</option>
+						<option value="4">4 - Seater</option>
+						<option value="7">7 - Seater</option>   
+					</select>
+				</div>
+
+				<br />
+				<br />
+				<br />
+				<div>
+					<button (click)="onResetFilter($event)" style="font-weight: normal;width: 100%;padding: 12px 0;outline: none; background: #004369; color: #ffffff;border: none;">Reset</button>
+				</div>
+
+		</div>
+
+	</div>
+
+	<!-- Marketplace Section -->
+	<div style="height: calc(100% - 20px);background: none;width: calc(100% - 300px);margin-top: 20px;overflow: hidden;">
+		
+		<!-- Marketplace Label -->
+		<div style="font-size: 1.5rem;font-weight: bold;">
+			Marketplace
+		</div>
+		<br />
+
+		<!-- Item Grid -->
+		<div style="background: none;height: 100%;">
+			<div class="grid-container" >
+
+		<div
         *ngFor="
           let car of displayList | paginate: { itemsPerPage: count, currentPage: p };
           index as i
-        "
-      >
-        <div class="card-body">
-          <div class="row justify-content-between"> 
-            <div class="col-6">
+        " class="card item1" (click)="onRent(car.carID)" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
+			  	<div style="background: white;">
 
-              <h5 class="card-title">
-                <img src="https://source.unsplash.com/user/c_v_r/250x250" alt="Car Item Image"><br />
-                {{ car.model }}
-                <span style="margin-left: 50px">
-                  <i class="bi bi-people-fill"></i>
-                  {{ car.seats }}
-                </span>
-              </h5>
+					<!-- Sedan Image -->
+			  		<img *ngIf="car.type == 'Sedan'" src="../../assets/images/sedan.svg" />
 
-              <p class="card-text">
-                <span id="addMarginRight"
+					<!-- SUV Image -->
+					<img *ngIf="car.type == 'SUV'" src="../../assets/images/suv.svg" />
+
+					<!-- Minivan Image -->
+					<img *ngIf="car.type == 'Minivan'" src="../../assets/images/minivan.svg" />
+
+					<!-- Hatchback Image -->
+					<img *ngIf="car.type == 'Hatchback'" src="../../assets/images/hatchback.svg" />
+
+					<!-- Pickup Image -->
+					<img *ngIf="car.type == 'Pickup'" src="../../assets/images/pickuptruck.svg" />
+
+
+			  		<div style="background: none;width: 223px;padding: 10px 10px;overflow: hidden;">
+			  			<!-- Item Title -->
+			  			<div style="background: none;font-size: 1rem;font-weight: bold;width: 92%;margin-bottom: 10px;">
+			  				{{ car.model  }}
+			  			</div>
+			  			<!-- Item Title -->
+			  			<div style="font-size: 0.8rem;font-weight: bold;display: flex;overflow: hidden;width: 92%;">
+			  				<!-- brand Tag -->
+			  				<div style="margin-bottom: 0px;">
+			  					<span id="addMarginRight"
                   ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
                   >{{ car.brand }}</span>
-
-                <span id="addMarginRight"
+			  			
+			  				<!-- Category Tag -->
+                  <span id="addMarginRight"
                   ><i class="bi bi-truck" style="margin-right: 5px"></i
                   >{{ car.type }}</span>
-
-                <span id="addMarginRight"
+                  <br />
+			  				<!-- Transmission Tag -->
+                  <span id="addMarginRight"
                   ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
                   >{{ car.transmission }}</span>
+			  			  </div>
+			  			</div>
+			  		</div>
+			  	</div>
+			  </div> <!-- END of Item 1 -->
+			
+			</div> <!-- END of Grid -->
 
-                <br />
-                <br />
+		</div>
 
-              </p>
-            </div>
+	</div>
 
-            <div class="col-2">
-              <button class="btn btn-dark" id="cardButtons" (click)="onRent(car.carID)">
-                Rent
-              </button>
-            </div>
 
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div style="margin: 50px;">
+
+</div>
+
+    <div class="row" style="background:none;margin: auto;text-align: center;">
+      <div style="margin: 50px;background: none;">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
     </div>
-  </div>
-  

@@ -21,6 +21,11 @@ export class AppComponent {
     return checkRole;
   }
 
+  getUserName(){
+    var user_email = this.authService.userEmail;
+    return user_email;
+  }
+
   checkIfLoggedIn() {
     return this.authService.isLoggedIn;
   }

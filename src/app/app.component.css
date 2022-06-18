@@ -10,6 +10,7 @@ nav{
     color:black;
     pointer-events: none;
     font-size: 1.7rem;
+    width: 200px;
 }
 .colored{
     color: #004369;

@@ -1,16 +1,16 @@
-<div class="container">
-    <div class="col-9">
+<div class="main-container" id="main">
+    <div class="" style="background: #F4F4F4;">
         <app-rent-car-list
              [sendCarList]="carList"
              (selectedCar)="onRent($event)"
         ></app-rent-car-list>
-    </div>
-
+    </div> 
     <div *ngIf="renting">
         <app-rent-form
             [sendCarInfo]="selectedCarInfo"
             [sendUserInfo]="userList[userIndex]"
             (rentStatus)="rentComplete($event)"
+            (cancelRentView)="onRentCancel($event)"
         ></app-rent-form>
     </div>
 </div>

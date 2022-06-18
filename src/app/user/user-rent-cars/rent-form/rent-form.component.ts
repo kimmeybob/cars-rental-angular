@@ -19,10 +19,13 @@ export class RentFormComponent implements OnInit {
   @Input('sendUserInfo') userInfo!: any;
   @Output() rentStatus = new EventEmitter<boolean>();
 
+  @Output() cancelRentView = new EventEmitter<number>();
+
+
   result = "Results Here";
   currentDate = new Date();
   
-
+  renting = false;
   sent = false;
 
   rentForm!: FormGroup;
@@ -76,6 +79,10 @@ export class RentFormComponent implements OnInit {
       rStartDate: [''],
       rEndDate: [''],
     });
+  }
+
+  onRentCancel(){
+    this.cancelRentView.emit(0);
   }
 
 

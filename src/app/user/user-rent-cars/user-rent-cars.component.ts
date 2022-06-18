@@ -39,6 +39,10 @@ export class UserRentCarsComponent implements OnInit {
     this.selectedCarInfo = this.selectedCarInfo = this.cservice.getSpecificCar(carID, this.carList);
   }
 
+  onRentCancel(value: any){
+    this.renting = false;
+  }
+
   rentComplete(value: any){
     this.renting = value;
     this.selectedCarInfo = null as any;

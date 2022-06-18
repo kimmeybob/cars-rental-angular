@@ -14,7 +14,7 @@ export class RentCarListComponent implements OnInit {
   displayList = [] as any;
 
   p: number = 1;
-  count: number = 4;
+  count: number = 5;
 
   constructor(private cservice: CarsService) {}
   
@@ -28,6 +28,10 @@ export class RentCarListComponent implements OnInit {
 
   onRent(carID: any){
     this.selectedCar.emit(carID);
+  }
+
+  onResetFilter(event: any){
+    this.displayList = this.carList;
   }
 
   onChangeBrand(event: any){
@@ -54,5 +58,4 @@ export class RentCarListComponent implements OnInit {
     this.displayList = this.carList;
     this.p = 1;
   }
-
 }

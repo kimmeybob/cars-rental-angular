@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: '',
-      component: UserHomeComponent,
+      component: UserRentCarsComponent,
   },
   {
     path: '**',
