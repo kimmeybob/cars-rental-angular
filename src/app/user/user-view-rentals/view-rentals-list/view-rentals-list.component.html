@@ -47,29 +47,20 @@
         <!-- Filter Section -->
         <div style="background: none;width: 360px;padding: 20px;">
             
-            <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 290px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
+            <!-- <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 210px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
     
-                    <div style="font-size: 1.5rem;font-weight: bold;">Car Filters</div>
+                    <div style="font-size: 1.5rem;font-weight: bold;">Rentals Filter</div>
                     <br />
-                    <div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Brand</div>
+                    <div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Sort By</div>
                     <div style="background: none;">
-                        <select class="filterBar custom-select" style="height: 48px;">
-                            <option disabled selected value style="display: none">Active</option>
-                            <option value="Toyota">Active</option>
-                            <option value="Toyota">All</option>
-                        
+                        <select (change)="onChangeViewSelection($event)" class="filterBar custom-select"  style="height: 48px;">
+                            <option disabled selected value style="display: none">Active Rentals</option>
+                            <option value="active">Active Rentals</option>
+                            <option value="history">Rental History</option>
                           </select>
                     </div>
     
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div>
-                        <button style="font-weight: normal;width: 100%;padding: 12px 0;outline: none; background: #004369; color: #ffffff;border: none;">Reset</button>
-                    </div>
-    
-            </div>
+            </div> -->
     
         </div>
     
@@ -78,7 +69,7 @@
             
             <!-- Marketplace Label -->
             <div style="font-size: 1.5rem;font-weight: bold;">
-                {{ "Active Rentals" }}
+                {{ getHeadingTitle() }}
             </div>
             <br />
     

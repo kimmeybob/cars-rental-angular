@@ -5,6 +5,7 @@
              [sendCarList]="carList"
              [sendUserInfo]="userList[userIndex]"
              (selectedRental)="onDetail($event)"
+             [sendHistoryList]="historyList"
         ></app-view-rentals-list>
     </div>
     <div *ngIf="detail">

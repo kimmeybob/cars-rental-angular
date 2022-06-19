@@ -1,4 +1,4 @@
-<div class="container">   
+<!-- <div class="container">   
     <div class="row">
         <div class="col-12 card"
                 *ngFor="let hist of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;">
@@ -32,4 +32,126 @@
         </div>
     </div>
     
-</div>
+</div> -->
+
+
+
+<!-- <div class="container">   
+    <div class="row">
+        <div class="col-12 card"
+                *ngFor="let rent of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;">
+                <div class="card-body">
+                    <div class="row justify-content-between">
+                        <div class="col-8">   
+                            <h5 class="card-title">
+                                <span style="margin-right: 10px;">
+                                    <i class="bi bi-truck"></i>
+                                </span>
+                                {{rent.carModel}}
+                            </h5>
+                            <p>
+                                <span id="addMarginRight"><i class="bi bi-calendar-date-fill" style="margin-right: 5px;"></i>{{rent.rentStartDate}}</span>
+                                <span id="addMarginRight">{{" | "}}</span><span class="addMarginRight">{{rent.rentEndDate}}</span>
+                            </p>
+                            <p class="card-text">
+                                <span id="addMarginRight"><i class="bi bi-house-fill" style="margin-right: 5px;"></i>{{rent.address}}</span>
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-dark" id="cardButtons" (click)="onDetail(rent.rentalID)">Details</button>
+                        </div>
+                    </div>  
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin: 50px;">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+    
+</div> -->
+
+<div class="row">
+
+    <div style="
+    z-index: 0;
+    background: #F4F4F4;
+    width: 100%;
+    height: calc(100% - (20px * 2));
+    padding: 20px 0;
+    display: flex;">
+        
+        <!-- Filter Section -->
+        <div style="background: none;width: 360px;padding: 20px;">
+            <!-- Empty Side Filter -->
+        </div>
+    
+        <!-- Marketplace Section -->
+        <div style="height: calc(100% - 20px);background: none;width: calc(100% - 360px);margin-top: 20px;overflow: hidden;">
+            
+            <!-- Marketplace Label -->
+            <div style="font-size: 1.5rem;font-weight: bold;">
+                Rental History
+            </div>
+            <br />
+    
+            <!-- Item Grid -->
+            <div style="background: none;height: 100%;">
+                <div class="grid-container" >
+
+                
+    
+            <div *ngFor="let rent of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;" (click)="onDetail(rent.rentalID)" class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
+                      <!-- <div *ngIf="isRentEmpty()" style="background: #F4F4F4;padding: 20px 20px 10px 20px">
+                        <p>No current rents available.</p>
+                      </div> -->
+
+                      <!-- *ngIf="!isRentEmpty()" -->
+
+                      <div  style="background: white;">
+                        
+                        <!-- Sedan Image -->
+                        <img src="../../assets/images/active_rent.svg" />
+    
+                          <div style="background: none;width: 223px;padding: 10px 10px;overflow: hidden;">
+                              <!-- Item Title -->
+                              <div style="background: none;font-size: 1rem;font-weight: bold;width: 92%;margin-bottom: 10px;">
+                                {{rent.carModel}}
+                              </div>
+                              <!-- Item Title -->
+                              <div style="font-size: 0.8rem;font-weight: bold;display: flex;overflow: hidden;width: 92%;">
+                                  <!-- Start and End Date Tag -->
+                                  <div style="margin-bottom: 0px;">
+                                      <span id="addMarginRight"
+                      ><i class="bi bi-calendar-date-fill" style="margin-right: 5px;"></i>{{rent.rentStartDate + " | " + rent.rentEndDate}}
+                    </span>
+                      <br />
+                                  <!-- Address Tag -->
+                      <span id="addMarginRight"
+                      ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
+                      >
+                      {{ rent.address }} 
+                    </span>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div> <!-- END of Item 1 -->
+                
+                </div> <!-- END of Grid -->
+    
+            </div>
+    
+        </div>
+    
+    
+    
+    </div>
+    
+        <div class="row" style="background:none;margin: auto;text-align: center;">
+          <div style="margin: 50px;background: none;">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+        </div>
+    

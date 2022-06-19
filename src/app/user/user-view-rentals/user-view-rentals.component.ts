@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 import { CarsService } from 'src/app/shared/car/cars.service';
 import { RentalsService } from 'src/app/shared/rental/rentals.service';
 import { UsersService } from 'src/app/shared/user/users.service';
+import { RentHistory } from 'src/app/shared/rent-history/history';
+import { HistoryService } from 'src/app/shared/rent-history/history.service';
 
 @Component({
   selector: 'app-user-view-rentals',
@@ -11,6 +13,7 @@ import { UsersService } from 'src/app/shared/user/users.service';
 })
 export class UserViewRentalsComponent implements OnInit {
 
+  historyList = [] as any;
   rentalList = [] as any;
   detail = false;
   userList = [] as any;
@@ -24,6 +27,7 @@ export class UserViewRentalsComponent implements OnInit {
     private cservice: CarsService, 
     private rservice: RentalsService, 
     private uservice: UsersService, 
+    private rhservice: HistoryService,
     private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -35,6 +39,9 @@ export class UserViewRentalsComponent implements OnInit {
     });
     this.uservice.getUser().subscribe((val) => {
       this.userList = val;
+    });
+    this.rhservice.getRentHistoryList().subscribe((val) => {
+      this.historyList = val;
     });
   }
 
