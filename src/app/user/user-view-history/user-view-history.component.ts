@@ -17,6 +17,8 @@ export class UserViewHistoryComponent implements OnInit {
   userList = [] as any;
   carList = [] as any;
 
+  isDetailViewed = false;
+
   userIndex!: any;
   currentUserEmail!: any;
   selectedRentalHistory!: any;
@@ -45,6 +47,19 @@ export class UserViewHistoryComponent implements OnInit {
   onDetail(rentalID: any){
       this.detail = true;
       this.selectedRentalHistory = this.rhservice.getSpecificRentHistory(rentalID, this.historyList);
+  }
+
+  onCloseDetail(value: boolean){
+
+    if(value){
+      //Detail View is requested to open
+      this.detail = true;
+    }else{
+      //Request to Close Detail View
+      this.detail = false;
+    }
+
+    
   }
 
   detailComplete(value: any){

@@ -16,6 +16,9 @@ export class ViewDetailComponent implements OnInit {
   @Input('sendUserInfo') userInfo!: any;
   @Input('sendCarList') carList!: any;
   @Output() detailStatus = new EventEmitter<boolean>();
+  @Output() closeDetail = new EventEmitter<boolean>();
+
+  detail = false;
 
   userHistoryList = [] as any;
 
@@ -29,6 +32,10 @@ export class ViewDetailComponent implements OnInit {
   ngOnChanges(): void{
     this.userHistoryList = this.rhservice.getUserHistoryList(this.userInfo.userID, this.historyList)
     this.specificCar = this.cservice.getSpecificCar(this.HistoryDetail.carID, this.carList); 
+  }
+
+  onCloseDetail(value: any){
+    this.closeDetail.emit(value);
   }
 
 }
