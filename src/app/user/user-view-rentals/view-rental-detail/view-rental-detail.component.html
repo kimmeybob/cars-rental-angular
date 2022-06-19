@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="card">   
         <h2 class="card-header">Rental Details</h2>
         <div class="card-body">
@@ -39,4 +39,184 @@
         </div>
     </div>
 </div>
+ -->
 
+ 
+<!-- View/Rent Side Panel -->
+<div class="item-view" id="item-view" style="z-index: 0;background: none;width: 100%;position:absolute;top:0;left:0;bottom:0;right:0;height:120%;overflow: hidden;display: flex;">
+		
+    <!-- Transparent div -->
+    <!-- Should have an onclick to close modal -->
+    <div (click)="onClose()" style="background:white;opacity: 0.6;width: 100%;height: 100%;">
+  
+    </div>
+    <!-- Details -->
+    <div style="background:white;width: 350px;height: 100%;border: 1px solid #DBDBDB;z-index: 5;">
+      <div style="background: #323232;text-align: center;margin: auto;">
+        
+        <!-- Sedan Image -->
+        <img *ngIf="specificCar.type == 'Sedan'" src="../../assets/images/sedan.svg" />
+  
+        <!-- SUV Image -->
+        <img *ngIf="specificCar.type == 'SUV'" src="../../assets/images/suv.svg" />
+  
+        <!-- Minivan Image -->
+        <img *ngIf="specificCar.type == 'Minivan'" src="../../assets/images/minivan.svg" />
+  
+        <!-- Hatchback Image -->
+        <img *ngIf="specificCar.type == 'Hatchback'" src="../../assets/images/hatchback.svg" />
+  
+        <!-- Pickup Image -->
+        <img *ngIf="specificCar.type == 'Pickup'" src="../../assets/images/pickuptruck.svg" />
+  
+      </div>
+  
+      <div style="padding: 20px;">
+  
+        <!-- Title -->
+        <div style="font-weight: bold;font-size: 1.3rem;background: none;">
+          <p>{{specificCar.model}}</p>
+        </div>
+  
+        <!-- Tags -->
+        <div>
+          <span id="addMarginRight" style="margin-right: 15px"
+          ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
+          >{{ specificCar.brand }}</span>
+      
+        <!-- Category Tag -->
+          <span id="addMarginRight" style="margin-right: 15px"
+          ><i class="bi bi-truck" style="margin-right: 5px"></i
+          >{{ specificCar.type }}</span>
+          
+        <!-- Transmission Tag -->
+          <span id="addMarginRight" style="margin-right: 15px"
+          ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
+          >{{ specificCar.transmission }}</span>
+        </div>
+  
+        <!-- Car Details -->
+        <div>
+          <!-- Heading Label -->
+          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">Car Details</div>
+  
+          <!-- Brand -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Brand</div>
+            <div style="flex: 50%;text-align: right;">{{specificCar.brand}}</div>
+          </div>
+  
+          <!-- Model -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Model</div>
+            <div style="flex: 50%;text-align: right;">{{specificCar.model}}</div>
+          </div>
+  
+          <!-- Category -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Category</div>
+            <div style="flex: 50%;text-align: right;">{{specificCar.type}}</div>
+          </div>
+  
+          <!-- Transmission -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Transmission</div>
+            <div style="flex: 50%;text-align: right;">{{specificCar.transmission}}</div>
+          </div>
+  
+          <!-- Seat Load -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Seat Load</div>
+            <div style="flex: 50%;text-align: right;">{{specificCar.seats}}</div>
+          </div>
+        </div>
+  
+        <!-- Renter's Details -->
+        <div>
+          <!-- Heading Label -->
+          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">Renter's Details</div>
+  
+          <!-- Name -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Name</div>
+            <div style="flex: 50%;text-align: right;">{{rentalDetail.firstName+" "+rentalDetail.lastName}}</div>
+          </div>
+  
+          <!-- Address -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Address</div>
+            <div style="flex: 50%;text-align: right;">{{rentalDetail.address}}</div>
+          </div>
+  
+          <!-- Email -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Email</div>
+            <div style="flex: 50%;text-align: right;">{{rentalDetail.email}}</div>
+          </div>
+  
+          <!-- Phone -->
+          <div style="width: 100%;display: flex;margin: 5px 0;">
+            <div>Phone</div>
+            <div style="flex: 50%;text-align: right;">{{rentalDetail.contactNumber}}</div>
+          </div>
+        </div>
+  
+        <!-- Booking Details -->
+        <div>
+          <!-- Date -->
+          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">Rent Date</div>
+          <div>
+            
+            <form id="rentForm">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="date" style="font-weight:normal">Start Date</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="{{rentalDetail.rentStartDate}}"
+                      disabled
+                    />
+                    
+                  </div>
+                
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="date" style="font-weight:normal">End Date</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{rentalDetail.rentEndDate}}"
+                    disabled
+                  />
+                   
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            <div>
+              <div>
+                <p *ngIf="cancel" style="color: red;font-size:0.8rem"> Note: Cancellation is only available a<br />week before the rent date. </p>
+                <app-rental-cancel [sendRentalID]="rentalDetail.rentalID" [isCancellable]="cancel" (editStatus)="onCancelReservation($event)"></app-rental-cancel>
+              </div>
+            </div>
+            <div>
+              <button style="width: 100%;background: white;color: black;border: 1px solid #004369;outline: none;margin-top: 10px;padding: 10px 0px" (click)="onClose()" id="buttonBox1">
+                Close
+              </button>
+            </div>
+  
+          </div>
+          
+        </div>
+  
+  
+      </div>
+      
+    </div>
+  
+  </div>
+  

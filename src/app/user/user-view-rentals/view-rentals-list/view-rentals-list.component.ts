@@ -21,7 +21,7 @@ export class ViewRentalsListComponent implements OnInit {
   specificCar = [] as any;
 
   p: number = 1;
-  count: number = 4;
+  count: number = 8;
 
   constructor(private rservice: RentalsService, private cservice: CarsService) { }
 

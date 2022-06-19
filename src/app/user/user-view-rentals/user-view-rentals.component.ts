@@ -49,6 +49,10 @@ export class UserViewRentalsComponent implements OnInit {
     
   }
 
+  onDetailCancel(value: any){
+    this.detail = false;
+  }
+
   detailComplete(value: any){
     this.detail = value;
     this.selectedRentalDetail = null as any;
