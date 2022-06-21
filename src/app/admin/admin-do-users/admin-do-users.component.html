@@ -1,11 +1,11 @@
-<div class="container">
-    <div class="col-9">
+<div class="main-container" id="main">
+    <div class="" style="background: #F4F4F4;">
         <app-user-list
             [sendUserList]="userList"
             (selectedUser)="onEdit($event)"
         ></app-user-list>
     </div>
-    <div clss="col" *ngIf="editing">
+    <div *ngIf="editing">
         <app-user-edit
             [sendUserInfo]="selectedUSerInfo"
             (editStatus)="editComplete($event)"

@@ -1,5 +1,6 @@
-<div class="container">   
+<!-- <div class="container">   
     <div class="row">
+        asdasds
         <div class="col-12 card"
                 *ngFor="let user of userList | paginate: {itemsPerPage: count, currentPage: p } index as i;">
                 <div class="card-body">
@@ -38,4 +39,98 @@
         </div>
     </div>
     
-</div>
+</div> -->
+
+
+<div class="row">
+
+    <div style="
+    z-index: 0;
+    background: #F4F4F4;
+    width: 100%;
+    height: calc(100% - (20px * 2));
+    padding: 20px 0;
+    display: flex;">
+        
+        <!-- Filter Section -->
+        <div style="background: none;width: 360px;padding: 20px;">
+            
+            <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 590px;background: none;border: none;overflow:hidden;">
+    
+                  
+                    
+    
+            </div>
+    
+        </div>
+    
+        <!-- Marketplace Section -->
+        <div style="height: calc(100% - 20px);background: none;width: calc(100% - 300px);margin-top: 20px;overflow: hidden;">
+            
+            <!-- Marketplace Label -->
+            <div style="font-size: 1.5rem;font-weight: bold;">
+                Users
+            </div>
+            <br />
+    
+            <!-- Item Grid -->
+            <div style="background: none;height: 100%;">
+                <div class="grid-container" >
+    
+            <div
+             class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
+                      <div style="background: white;">
+    
+                        <!-- Sedan Image -->
+                          <img  src="../../assets/images/user.svg" />
+    
+                          <div style="background: none;width: 223px;padding: 10px 10px;overflow: hidden;">
+                              <!-- Item Title -->
+                              <div style="background: none;font-size: 1rem;font-weight: bold;width: 92%;margin-bottom: 10px;">
+                                  <!-- {{ car.model  }} -->
+                              </div>
+                              <!-- Item Title -->
+                              <div style="font-size: 0.8rem;font-weight: bold;display: flex;overflow: hidden;width: 92%;">
+                                  <!-- brand Tag -->
+                                  <div style="margin-bottom: 0px;">
+                                      <span id="addMarginRight"
+                      ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
+                      >
+                      <!-- {{ car.brand }} -->
+                    </span>
+                              
+                                  <!-- Category Tag -->
+                      <span id="addMarginRight"
+                      ><i class="bi bi-truck" style="margin-right: 5px"></i
+                      >
+                      <!-- {{ car.type }} -->
+                    </span>
+                      <br />
+                                  <!-- Transmission Tag -->
+                      <span id="addMarginRight"
+                      ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
+                      >
+                      <!-- {{ car.transmission }} -->
+                    </span>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div> <!-- END of Item 1 -->
+                
+                </div> <!-- END of Grid -->
+    
+            </div>
+    
+        </div>
+    
+    
+    
+    </div>
+    
+        <div class="row" style="background:none;margin: auto;text-align: center;">
+          <div style="margin: 50px;background: none;">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+        </div>
+    
