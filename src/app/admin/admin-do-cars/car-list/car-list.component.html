@@ -90,9 +90,7 @@
         <div style="background: none;width: 360px;padding: 20px;">
             
             <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 590px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
-    
-                <div style="font-size: 1.5rem;font-weight: bold;">Add New</div>
-                <br />
+
 
                     <div style="font-size: 1.5rem;font-weight: bold;">Car Filters</div>
                     <br />
@@ -167,27 +165,30 @@
         </div>
 
 
-
-
-        
-    
         <!-- Marketplace Section -->
         <div style="height: calc(100% - 20px);background: none;width: calc(100% - 300px);margin-top: 20px;overflow: hidden;">
             
             <!-- Marketplace Label -->
-            <div style="font-size: 1.5rem;font-weight: bold;">
-                Car Rentals
-
+            <div >
+            
+                <div  style="width: calc( ( ( 250px + 2rem ) * 4) - 2rem );display: flex;flex-wrap:wrap;">
+                    <div style="font-size: 1.5rem;font-weight: bold;background: none;flex: 50%;">
+                        Marketplace
+                    </div>
+                    <div style="text-align: end;background: none;margin-right:1.5rem;">
+                        <button style="width: 142px;padding: 10px 0;outline: none; background: #004369; color: #ffffff;border: none;" (click)="displayAll()">Add Car</button>
+                    </div>
+                </div>
                 
             </div>
+
             <br />
-    
             <!-- Item Grid -->
             <div style="background: none;height: 100%;">
                 <div class="grid-container">
     
             <div *ngFor="let car of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;"
-            class="card item1" (click)="onEdit(car.carID)"  style="width: 225px;border: 1px solid #E2E2E2;background: white;">
+            class="card item1" (click)="onEdit(car.carID)" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
                       <div style="background: white;">
     
                         <!-- Sedan Image -->
