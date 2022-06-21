@@ -13,6 +13,7 @@ export class UserEditComponent implements OnInit {
 
   @Input('sendUserInfo') user!: User;
   @Output() editStatus = new EventEmitter<boolean>();
+  @Output() closeDetailsView = new EventEmitter<any>();
 
   userList = [] as any;
   editUserForm!: FormGroup;
@@ -83,6 +84,10 @@ export class UserEditComponent implements OnInit {
 
   passEditStatus(status: any){
     this.editStatus.emit(status);
+  }
+
+  closeDetails(value: any){
+    this.closeDetailsView.emit('close');
   }
 
   get f(){

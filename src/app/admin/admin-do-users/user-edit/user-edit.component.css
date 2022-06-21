@@ -1,4 +1,4 @@
-.container{
+/* .container{
     width: 450px;
 }
 
@@ -14,4 +14,49 @@
     display:inline-block;
     margin-left: 0;
     margin: 0 10px 0 0;
+} */
+
+.container{
+    display: flex;
 }
+
+.box1{
+    float: left;
+    width: 350px;
+    margin-left: 10px;
+}
+
+.box2{
+    float: left;
+    width: 350px;
+    margin-left: 10px;
+}
+
+#buttonBox1 {
+    width: 175px;
+    height: 40px;
+    display:inline-block;
+    
+}
+
+.result{
+    margin-top: 10px;
+}
+
+#result{
+    padding: 20px 0 20px 0;
+    text-align:center;
+    background-color: bisque;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+}
+
+label{
+    margin: 0;
+    font-weight: bolder;
+}
+
+

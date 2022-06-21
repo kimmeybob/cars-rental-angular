@@ -51,40 +51,25 @@
 
     <!-- ADMIN Nav Bar -->
     <ul class="navbar-nav ml-auto" *ngIf="checkIfAdmin() && checkIfLoggedIn() && !checkIfLogPage()">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink = "admin">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink = "adminUsers">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink = "adminCars">Cars</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink = "adminReservations">Reservations</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" (click)="logOut()">Log Out</a>
-        </li>
-
-        <!-- <li class="nav-item px-2">
+        
+        <li class="nav-item px-2">
           <a class="nav-link" style="pointer-events: none;">{{ getUserName() }}</a>
         </li>
         <li class="nav-item px-2">
           <a class="nav-link" style="pointer-events: none;">|</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" routerLink = "userRent" >Marketplace</a>
+          <a class="nav-link" routerLink = "adminUsers" >Users</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" routerLink = "userRentals">My&nbsp;Rental</a>
+          <a class="nav-link" routerLink = "adminCars">Cars&nbsp;Rentals</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" routerLink = "userHistory">History</a>
+          <a class="nav-link" routerLink = "adminReservations">Reservations</a>
         </li>
         <li class="nav-item px-2">
           <a class="nav-link" (click)="logOut()">Sign&nbsp;Out</a>
-        </li> -->
+        </li>
 
 
       </ul>

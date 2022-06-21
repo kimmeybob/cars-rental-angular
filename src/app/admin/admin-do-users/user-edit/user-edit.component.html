@@ -1,105 +1,9 @@
-<!-- <div class="container">
-    <div class="card">   
-        <h2 class="card-header">Edit User</h2>
-        <div class="card-body">
-            <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()" id="editUserForm">
-                <div class="form-group">
-                    <label for="fname">First Name</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    name="fname"
-                    formControlName="fname"
-                    [ngClass]="{ 'is-invalid': f.fname.errors && f.fname.dirty }"/>
-                    <div *ngIf="f.fname.errors && f.fname.dirty" class="invalid-feedback">
-                        <div *ngIf="f.fname.errors.required && f.fname.dirty">First Name is required</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="lname">Last Name</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    name="lname"
-                    formControlName="lname"
-                    [ngClass]="{ 'is-invalid': f.lname.errors && f.lname.dirty }"/>
-                    <div *ngIf="f.lname.errors && f.lname.dirty" class="invalid-feedback">
-                        <div *ngIf="f.lname.errors.required && f.lname.dirty">Last Name is required</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    name="address"
-                    formControlName="address"
-                    [ngClass]="{ 'is-invalid': f.address.errors && f.address.dirty }"/>
-                    <div *ngIf="f.address.errors && f.address.dirty" class="invalid-feedback">
-                        <div *ngIf="f.address.errors.required && f.address.dirty">Address is required</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    name="email"
-                    formControlName="email"
-                    [readonly] = true
-                    [ngClass]="{ 'is-invalid': f.email.errors && f.email.dirty }"/>
-                    <div *ngIf="f.email.errors && f.email.dirty" class="invalid-feedback">
-                        <div *ngIf="f.email.errors.required && f.email.dirty">Email Address is required</div>
-                        <div *ngIf="f.email.errors.email && f.email.dirty">Entry must be an email</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactnum">Contact Number</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    name="contactnum"
-                    formControlName="contactnum"
-                    [ngClass]="{ 'is-invalid': f.contactnum.errors && f.contactnum.dirty}"/>
-                    <div *ngIf="f.contactnum.errors && f.contactnum.dirty" class="invalid-feedback">
-                        <div *ngIf="f.contactnum.errors.required && f.contactnum.dirty">Contact Number is required</div>
-                        <div *ngIf="f.contactnum.errors.pattern && f.contactnum.dirty">Contact Number must only contain numbers</div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="rpassword">Password</label>
-                    <input
-                    type="password"
-                    class="form-control"
-                    name="rpassword"
-                    formControlName="rpassword"
-                    [readonly] = true
-                    [ngClass]="{ 'is-invalid': f.rpassword.errors && f.rpassword.dirty}"/>
-                    <div *ngIf="f.rpassword.errors && f.rpassword.dirty" class="invalid-feedback">
-                        <div *ngIf="f.rpassword.errors.required && f.rpassword.dirty">Password is required</div>
-                        <div *ngIf="f.rpassword.errors.minlength && f.rpassword.dirty">Password must be 6 characters</div>
-                    </div>
-                </div>
-
-            </form>
-            <button class="btn btn-dark" form="editUserForm" id="userAddButtonBox1" [disabled]="!editUserForm.valid">Edit</button>
-            <button class="btn btn-light" id="userAddButtonBox2" (click)="stopEditing()">Cancel</button>
-        </div>
-    </div>
-</div> -->
-
-
 
 <!-- View/Rent Side Panel -->
 <div class="item-view" id="item-view" style="z-index: 0;background: none;width: 100%;position:absolute;top:0;left:0;bottom:0;right:0;height:120%;overflow: hidden;display: flex;">
 		
     <!-- Transparent div -->
-    <div style="background:white;opacity: 0.6;width: 100%;height: 100%;">
+    <div (click)="closeDetails('close')" style="background:white;opacity: 0.6;width: 100%;height: 100%;">
   
     </div>
   
@@ -113,163 +17,104 @@
       </div>
   
       <div style="padding: 10px;">
-  
-        <!-- Title -->
-        <div style="font-weight: bold;font-size: 1.3rem;background: none;">
-          <p>
-            <!-- {{f.cModel.value}} -->
-        </p>
-        </div>
-  
-        <!-- Tags -->
-        <div>
-          <span id="addMarginRight" style="margin-right: 15px"
-          ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
-          >
-          <!-- {{ f.cBrand.value }} -->
-        </span>
-      
-        <!-- Category Tag -->
-          <span id="addMarginRight" style="margin-right: 15px"
-          ><i class="bi bi-truck" style="margin-right: 5px"></i
-          >
-          <!-- {{ car.type }} -->
-        </span>
-          
-        <!-- Transmission Tag -->
-          <span id="addMarginRight" style="margin-right: 15px"
-          ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
-          >
-          <!-- {{ car.transmission }} -->
-        </span>
-        </div>
-  
-        <!-- Car Details -->
-        <div>
-          <!-- Heading Label -->
-          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">Car Details</div>
-  
-          <!-- Brand -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Brand</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.cBrand.value}} -->
-            </div>
-          </div>
-  
-          <!-- Model -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Model</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.cModel.value}} -->
-            </div>
-          </div>
-  
-          <!-- Category -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Category</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.cType.value}} -->
-            </div>
-          </div>
-  
-          <!-- Transmission -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Transmission</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.cTransmission.value}} -->
-            </div>
-          </div>
-  
-          <!-- Seat Load -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Seat Load</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.cSeats.value}} -->
-            </div>
-          </div>
-        </div>
-  
+
         <!-- Renter's Details -->
         <div>
           <!-- Heading Label -->
-          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">Renter's Details</div>
+          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">User Details</div>
   
-          <!-- Name -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Name</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.uFirstName.value + " " + f.uLastName.value}} -->
-            </div>
-          </div>
-  
-          <!-- Address -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Address</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.uAddress.value}} -->
-            </div>
-          </div>
-  
-          <!-- Email -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Email</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.uEmail.value}} -->
-            </div>
-          </div>
-  
-          <!-- Phone -->
-          <div style="width: 100%;display: flex;margin: 5px 0;">
-            <div>Phone</div>
-            <div style="flex: 50%;text-align: right;">
-                <!-- {{f.uContactNum.value}} -->
-            </div>
-          </div>
-        </div>
-  
-        <!-- Booking Details -->
-        <div>
-          <!-- Date -->
-          <div style="font-weight: bold;font-size: 1.25rem;margin: 10px 0;">Rent Date</div>
-          <div>
-            
-            <form id="rentForm">
-              <div class="row">
-                <div class="col">
-                  <div class="form-group">
-                    <label for="date" style="font-weight:normal">Start Date</label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      name="rStartDate"
-                      
-                    />
-                  </div>
+        
+          <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()" id="editUserForm">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input
+                type="text"
+                class="form-control"
+                name="fname"
+                formControlName="fname"
+                [ngClass]="{ 'is-invalid': f.fname.errors && f.fname.dirty }" readonly/>
+                <div *ngIf="f.fname.errors && f.fname.dirty" class="invalid-feedback">
+                    <div *ngIf="f.fname.errors.required && f.fname.dirty">First Name is required</div>
                 </div>
-                <div class="col">
-                  <div class="form-group">
-                    <label for="date" style="font-weight:normal">End Date</label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      name="rEndDate"
-                     
-                    />
-                  </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input
+                type="text"
+                class="form-control"
+                name="lname"
+                formControlName="lname"
+                [ngClass]="{ 'is-invalid': f.lname.errors && f.lname.dirty }" readonly/>
+                <div *ngIf="f.lname.errors && f.lname.dirty" class="invalid-feedback">
+                    <div *ngIf="f.lname.errors.required && f.lname.dirty">Last Name is required</div>
                 </div>
-              </div>
-            </form>
-  
-            <button style="width: 100%;background: #004369;color: white;border: none;outline: none;margin-top: 20px;" form="rentForm" id="buttonBox1">
-              Rent
-            </button>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input
+                type="text"
+                class="form-control"
+                name="address"
+                formControlName="address"
+                [ngClass]="{ 'is-invalid': f.address.errors && f.address.dirty }" readonly/>
+                <div *ngIf="f.address.errors && f.address.dirty" class="invalid-feedback">
+                    <div *ngIf="f.address.errors.required && f.address.dirty">Address is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                type="text"
+                class="form-control"
+                name="email"
+                formControlName="email"
+                [readonly] = true
+                [ngClass]="{ 'is-invalid': f.email.errors && f.email.dirty }" readonly/>
+                <div *ngIf="f.email.errors && f.email.dirty" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required && f.email.dirty">Email Address is required</div>
+                    <div *ngIf="f.email.errors.email && f.email.dirty">Entry must be an email</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contactnum">Contact Number</label>
+                <input
+                type="text"
+                class="form-control"
+                name="contactnum"
+                formControlName="contactnum"
+                [ngClass]="{ 'is-invalid': f.contactnum.errors && f.contactnum.dirty}" readonly/>
+                <div *ngIf="f.contactnum.errors && f.contactnum.dirty" class="invalid-feedback">
+                    <div *ngIf="f.contactnum.errors.required && f.contactnum.dirty">Contact Number is required</div>
+                    <div *ngIf="f.contactnum.errors.pattern && f.contactnum.dirty">Contact Number must only contain numbers</div>
+                </div>
+            </div>
             
-  
-          </div>
-          
+            <div class="form-group">
+                <label for="rpassword">Password</label>
+                <input
+                type="password"
+                class="form-control"
+                name="rpassword"
+                formControlName="rpassword"
+                [readonly] = true
+                [ngClass]="{ 'is-invalid': f.rpassword.errors && f.rpassword.dirty}" readonly/>
+                <div *ngIf="f.rpassword.errors && f.rpassword.dirty" class="invalid-feedback">
+                    <div *ngIf="f.rpassword.errors.required && f.rpassword.dirty">Password is required</div>
+                    <div *ngIf="f.rpassword.errors.minlength && f.rpassword.dirty">Password must be 6 characters</div>
+                </div>
+            </div>
+
+            <button style="outline: none; border: none;background:#004369;color: white;margin-top: 20px;width: 100%;padding: 10px;" id="userAddButtonBox2" (click)="closeDetails('close')">Close</button>
+
+        </form>
+
+
+
         </div>
-  
   
       </div>
       

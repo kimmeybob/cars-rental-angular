@@ -25,6 +25,10 @@ export class AdminDoUsersComponent implements OnInit {
     this.selectedUSerInfo = this.uservice.getSpecificUser(userID, this.userList);
   }
 
+  closeDetails(value: any){
+    this.editing = false;
+  }
+
   editComplete(value: any){
     this.editing = value;
     this.selectedUSerInfo = null as any;

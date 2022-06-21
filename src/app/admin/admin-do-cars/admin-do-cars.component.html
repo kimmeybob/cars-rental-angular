@@ -1,13 +1,13 @@
-<div class="container">
-    <div class="col-9">
+<div class="main-container" id="main">
+    <div class="" style="background: #F4F4F4;">
         <app-car-list
              [sendCarList]="carList"
              (selectedCar)="onEdit($event)"
         ></app-car-list>
     </div>
-    <div class="col">
+    <!-- <div class="col">
         <app-car-add></app-car-add>
-    </div>
+    </div> -->
     <div clss="col" *ngIf="editing">
         <app-car-edit
             [sendCarInfo]="selectedCarInfo"
