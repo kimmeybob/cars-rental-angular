@@ -77,8 +77,8 @@
             <div style="background: none;height: 100%;">
                 <div class="grid-container" >
     
-            <div
-             class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
+            <div *ngFor="let user of userList | paginate: {itemsPerPage: count, currentPage: p } index as i;"
+             class="card item1" (click)="onEdit(user.userID)" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
                       <div style="background: white;">
     
                         <!-- Sedan Image -->
@@ -87,7 +87,7 @@
                           <div style="background: none;width: 223px;padding: 10px 10px;overflow: hidden;">
                               <!-- Item Title -->
                               <div style="background: none;font-size: 1rem;font-weight: bold;width: 92%;margin-bottom: 10px;">
-                                  <!-- {{ car.model  }} -->
+                                {{user.firstName + " " + user.lastName}}
                               </div>
                               <!-- Item Title -->
                               <div style="font-size: 0.8rem;font-weight: bold;display: flex;overflow: hidden;width: 92%;">
@@ -96,21 +96,14 @@
                                       <span id="addMarginRight"
                       ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
                       >
-                      <!-- {{ car.brand }} -->
+                      {{user.email}}
                     </span>
-                              
-                                  <!-- Category Tag -->
-                      <span id="addMarginRight"
-                      ><i class="bi bi-truck" style="margin-right: 5px"></i
-                      >
-                      <!-- {{ car.type }} -->
-                    </span>
-                      <br />
+                    <br />
                                   <!-- Transmission Tag -->
                       <span id="addMarginRight"
-                      ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
+                      ><i class="bi bi-telephone-fill" style="margin-right: 5px"></i
                       >
-                      <!-- {{ car.transmission }} -->
+                      {{user.contactNumber}}
                     </span>
                                 </div>
                               </div>
@@ -123,8 +116,6 @@
             </div>
     
         </div>
-    
-    
     
     </div>
     

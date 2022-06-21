@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   @Output() selectedUser = new EventEmitter<number>();
 
   p: number = 1;
-  count: number = 3;
+  count: number = 8;
 
   constructor(private uservice: UsersService) { }
 
