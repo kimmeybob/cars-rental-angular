@@ -36,7 +36,6 @@
 
 <div class="row">
 
-  
     <div style="
     z-index: 0;
     background: #F4F4F4;
@@ -44,86 +43,52 @@
     height: calc(100% - (20px * 2));
     padding: 20px 0;
     display: flex;">
-
+        
         <!-- Filter Section -->
         <div style="background: none;width: 360px;padding: 20px;">
-            
-            <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 590px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
-                <!-- EMPTY SPACE -->
-            </div>
-    
+
         </div>
-
-
+    
         <!-- Marketplace Section -->
-        <div style="height: calc(100% - 20px);background: none;width: calc(100% - 300px);margin-top: 20px;overflow: hidden;">
+        <div style="height: calc(100% - 20px);background: none;width: calc(100% - 360px);margin-top: 20px;overflow: hidden;">
             
             <!-- Marketplace Label -->
-            <div >
-            
-                <div  style="width: calc( ( ( 250px + 2rem ) * 4) - 2rem );display: flex;flex-wrap:wrap;">
-                    <div style="font-size: 1.5rem;font-weight: bold;background: none;flex: 50%;">
-                        Marketplace Reservations
-                    </div>
-                    <div style="text-align: end;background: none;margin-right:1.5rem;">
-                        <button (click)="onAdd('true')" style="width: 142px;padding: 10px 0;outline: none; background: #004369; color: #ffffff;border: none;" (click)="displayAll()">Add Car</button>
-                    </div>
-                </div>
-                
+            <div style="font-size: 1.5rem;font-weight: bold;">
+               Marketplace Reservation
             </div>
-
             <br />
+    
             <!-- Item Grid -->
             <div style="background: none;height: 100%;">
-                <div class="grid-container">
-    
-            <div *ngFor="let rent of rentalList | paginate: {itemsPerPage: count, currentPage: p } index as i;"
-            class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
-                      <div style="background: white;">
+                <div class="grid-container" >
 
+                
+    
+            <div *ngFor="let rent of rentalList | paginate: {itemsPerPage: count, currentPage: p } index as i;" (click)="onEdit(rent.rentalID)" class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
+
+                      <div  style="background: white;">
+                        
                         <!-- Sedan Image -->
-                          <img *ngIf="car.type == 'Sedan'" src="../../assets/images/sedan.svg" />
-    
-                        <!-- SUV Image -->
-                        <img *ngIf="car.type == 'SUV'" src="../../assets/images/suv.svg" />
-    
-                        <!-- Minivan Image -->
-                        <img *ngIf="car.type == 'Minivan'" src="../../assets/images/minivan.svg" />
-    
-                        <!-- Hatchback Image -->
-                        <img *ngIf="car.type == 'Hatchback'" src="../../assets/images/hatchback.svg" />
-    
-                        <!-- Pickup Image -->
-                        <img *ngIf="car.type == 'Pickup'" src="../../assets/images/pickuptruck.svg" />
-    
+                        <img src="../../assets/images/active_rent.svg" />
     
                           <div style="background: none;width: 223px;padding: 10px 10px;overflow: hidden;">
                               <!-- Item Title -->
                               <div style="background: none;font-size: 1rem;font-weight: bold;width: 92%;margin-bottom: 10px;">
-                                  {{ car.model  }}
+                                {{rent.carModel}}
                               </div>
                               <!-- Item Title -->
                               <div style="font-size: 0.8rem;font-weight: bold;display: flex;overflow: hidden;width: 92%;">
-                                  <!-- brand Tag -->
+                                  <!-- Start and End Date Tag -->
                                   <div style="margin-bottom: 0px;">
                                       <span id="addMarginRight"
-                      ><i class="bi bi-tag-fill" style="margin-right: 5px"></i
-                      >
-                      {{ rent.carModel }}
-                    </span>
-                              
-                                  <!-- Category Tag -->
-                      <span id="addMarginRight"
-                      ><i class="bi bi-truck" style="margin-right: 5px"></i
-                      >
-                      {{ car.type }}
+                      ><i class="bi bi-calendar-date-fill" style="margin-right: 5px;"></i>{{rent.rentStartDate + " | " + rent.rentEndDate}}
                     </span>
                       <br />
-                                  <!-- Transmission Tag -->
+                                  <!-- Address Tag -->
                       <span id="addMarginRight"
                       ><i class="bi bi-pin-map-fill" style="margin-right: 5px"></i
                       >
-                      {{ car.transmission }}
+                      {{ rent.address }} 
                     </span>
                                 </div>
                               </div>

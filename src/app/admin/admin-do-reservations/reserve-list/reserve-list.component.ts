@@ -15,7 +15,7 @@ export class ReserveListComponent implements OnInit {
   @Output() selectedRental = new EventEmitter<number>();
 
   p: number = 1;
-  count: number = 4;
+  count: number = 8;
 
   constructor(private rservice: RentalsService) { }
 
