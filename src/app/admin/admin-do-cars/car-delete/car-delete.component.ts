@@ -17,7 +17,7 @@ export class CarDeleteComponent implements OnInit {
     private pop: PopupService,) { }
 
   ngOnInit(): void {
-    
+    this.editStatus.emit(false);
   }
 
   onDelete(){

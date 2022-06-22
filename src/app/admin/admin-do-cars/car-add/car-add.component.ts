@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges  } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CarsService } from 'src/app/shared/car/cars.service';
 import { Car } from 'src/app/shared/car/car';
@@ -9,7 +9,10 @@ import { PopupService } from 'src/app/shared/notification/popup.service';
   templateUrl: './car-add.component.html',
   styleUrls: ['./car-add.component.css']
 })
+
 export class CarAddComponent implements OnInit {
+
+  @Output() closeDetailForm = new EventEmitter<any>();
 
   addCarForm = this.fb.group({
     cmodel: ['',{
@@ -36,6 +39,10 @@ export class CarAddComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  onAdd(value: any){
+    this.closeDetailForm.emit(value);
   }
 
   onSubmit(){

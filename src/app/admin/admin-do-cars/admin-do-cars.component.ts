@@ -9,6 +9,7 @@ export class AdminDoCarsComponent implements OnInit {
 
   carList = [] as any;
   editing = false;
+  adding = false;
   selectedCarInfo!: any;
 
   constructor(private cservice: CarsService) { }
@@ -22,6 +23,15 @@ export class AdminDoCarsComponent implements OnInit {
   onEdit(carID: any) {
     this.editing = true;
     this.selectedCarInfo = this.cservice.getSpecificCar(carID, this.carList);
+  }
+
+  onAdd(value: any){
+    if( value == "false"){
+      this.adding = false;
+    }else{
+      this.adding = true;
+    }
+    
   }
 
   editComplete(value: any){

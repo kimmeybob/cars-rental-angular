@@ -3,12 +3,15 @@
         <app-car-list
              [sendCarList]="carList"
              (selectedCar)="onEdit($event)"
+             (closeDetailForm)="onAdd($event)"
         ></app-car-list>
     </div>
-    <!-- <div class="col">
-        <app-car-add></app-car-add>
-    </div> -->
-    <div clss="col" *ngIf="editing">
+    <div class="" *ngIf="adding">
+        <app-car-add
+            (closeDetailForm)="onAdd($event)"
+        ></app-car-add>
+    </div>
+    <div clss="" *ngIf="editing">
         <app-car-edit
             [sendCarInfo]="selectedCarInfo"
             (editStatus)="editComplete($event)"

@@ -1,20 +1,20 @@
-<div class="container">
-    <div class="col">
+<div class="main-container" id="main">
+    <div class="" style="background: #F4F4F4;">
+        <app-reserve-list
+        [sendRentalList]="rentalList"
+        (selectedRental)="onEdit($event)"
+        ></app-reserve-list>
+    </div>
+    <!-- <div class="col">
         <app-reserve-add
             [sendCarList]="carList"
         ></app-reserve-add>
-    </div>
-    <div class="col-8">
-        <app-reserve-list
-            [sendRentalList]="rentalList"
-            (selectedRental)="onEdit($event)"
-        ></app-reserve-list>
-    </div>
-    <div clss="col" *ngIf="editing">
+    </div> -->  
+    <!-- <div clss="col" *ngIf="editing">
         <app-reserve-detail
             [sendRentalInfo]="selectedRentalInfo"
             [sendCarList]="carList"
             (editStatus)="editComplete($event)"
         ></app-reserve-detail>
-    </div>
-</div>>
+    </div> -->
+</div>

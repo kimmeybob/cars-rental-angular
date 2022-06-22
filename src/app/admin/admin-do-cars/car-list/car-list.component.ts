@@ -10,6 +10,7 @@ export class CarListComponent implements OnInit {
 
   @Input('sendCarList') carList: any;
   @Output() selectedCar = new EventEmitter<number>();
+  @Output() closeDetailForm = new EventEmitter<any>();
 
   displayList = [] as any;
   
@@ -26,6 +27,10 @@ export class CarListComponent implements OnInit {
 
   ngOnChanges(){
     this.displayList = this.carList;
+  }
+
+  onAdd(value: any){
+    this.closeDetailForm.emit(value);
   }
 
   onEdit(carID: number){
