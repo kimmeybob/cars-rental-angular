@@ -53,8 +53,13 @@
         <div style="height: calc(100% - 20px);background: none;width: calc(100% - 360px);margin-top: 20px;overflow: hidden;">
             
             <!-- Marketplace Label -->
-            <div style="font-size: 1.5rem;font-weight: bold;">
-               Marketplace Reservation
+            <div  style="width: calc( ( ( 250px + 2rem ) * 4) - 2rem );display: flex;flex-wrap:wrap;">
+                <div style="font-size: 1.5rem;font-weight: bold;background: none;flex: 50%;">
+                    Marketplace Reservation
+                </div>
+                <div style="text-align: end;background: none;margin-right:1.5rem;">
+                    <button (click)="onAdd('true')"  style="width: 142px;padding: 10px 0;outline: none; background: #004369; color: #ffffff;border: none;">Add Car</button>
+                </div>
             </div>
             <br />
     

@@ -13,6 +13,7 @@ export class ReserveListComponent implements OnInit {
   @Input('sendRentalList') rentalList: any;
 
   @Output() selectedRental = new EventEmitter<number>();
+  @Output() onAddReservations = new EventEmitter<any>();
 
   p: number = 1;
   count: number = 8;
@@ -28,6 +29,10 @@ export class ReserveListComponent implements OnInit {
 
   onEdit(rentID: any){
     this.selectedRental.emit(rentID);
+  }
+
+  onAdd(value: any){
+    this.onAddReservations.emit(value);
   }
 
 }

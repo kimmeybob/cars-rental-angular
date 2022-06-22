@@ -14,6 +14,7 @@ export class AdminDoReservationsComponent implements OnInit {
   rentalList = [] as any;
   carList = [] as any;
   editing = false;
+  adding = false;
   userList = [] as any;
 
   userIndex!: any;
@@ -46,6 +47,15 @@ export class AdminDoReservationsComponent implements OnInit {
   onEdit(rentID: any){
     this.editing = true;
     this.selectedRentalInfo = this.rservice.getSpecificRent(rentID, this.rentalList);
+  }
+
+  onAdd(value: any){
+    if( value == "false"){
+      this.adding = false;
+    }else{
+      this.adding = true;
+    }
+    
   }
 
   editComplete(value: any){

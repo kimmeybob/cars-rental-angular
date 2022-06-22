@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,  Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/shared/user/users.service';
 import { CarsService } from 'src/app/shared/car/cars.service';
@@ -17,6 +17,7 @@ import { HistoryService } from 'src/app/shared/rent-history/history.service';
 export class ReserveAddComponent implements OnInit {
 
   @Input('sendCarList') carList: any;
+  @Output() onAddReservations = new EventEmitter<boolean>();
 
 
   availableCarList = [] as any;
@@ -80,6 +81,10 @@ export class ReserveAddComponent implements OnInit {
         validators: [Validators.required],
       }],
     });
+  }
+
+  onAdd(value: any){
+    this.onAddReservations.emit(value);
   }
 
   onSubmit(){

@@ -3,13 +3,15 @@
         <app-reserve-list
         [sendRentalList]="rentalList"
         (selectedRental)="onEdit($event)"
+        (onAddReservations)="onAdd($event)"
         ></app-reserve-list>
     </div>
-    <!-- <div class="col">
+    <div class="" *ngIf="adding">
         <app-reserve-add
             [sendCarList]="carList"
+            (onAddReservations)="onAdd($event)"
         ></app-reserve-add>
-    </div> -->  
+    </div>  
     <div clss="" *ngIf="editing">
         <app-reserve-detail
             [sendRentalInfo]="selectedRentalInfo"
