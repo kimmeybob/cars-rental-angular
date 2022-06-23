@@ -14,7 +14,7 @@
             
             <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 590px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
 
-
+                <form>
                     <div style="font-size: 1.5rem;font-weight: bold;">Car Filters</div>
                     <br />
                     <div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Brand</div>
@@ -37,8 +37,8 @@
                     <br />
                     <div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Category</div>
                     <div style="background: none">
-                        <select class="filterBar custom-select" (change)="onChangeType($event)" style="height: 48px;">
-                            <option disabled selected value style="display: none">Type</option>
+                        <select class="filterBar custom-select" id="category_select" (change)="onChangeType($event)" style="height: 48px;">
+                            <option disabled selected value style="display: none">Category</option>
                             <option value="Sedan">Sedan</option>
                             <option value="SUV">SUV</option>
                             <option value="Minivan">Minivan</option>
@@ -80,9 +80,9 @@
                     <br />
                     <br />
                     <div>
-                        <button style="font-weight: normal;width: 100%;padding: 12px 0;outline: none; background: #004369; color: #ffffff;border: none;" (click)="displayAll()">Reset</button>
+                        <button type="reset" style="font-weight: normal;width: 100%;padding: 12px 0;outline: none; background: #004369; color: #ffffff;border: none;" (click)="displayAll()">Reset</button>
                     </div>
-    
+                </form>
             </div>
     
         </div>

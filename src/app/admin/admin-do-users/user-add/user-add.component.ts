@@ -4,6 +4,7 @@ import { UsersService } from 'src/app/shared/user/users.service';
 import { User } from 'src/app/shared/user/user';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { PopupService } from 'src/app/shared/notification/popup.service';
+declare var require: any
 
 @Component({
   selector: 'app-user-add',

@@ -4,6 +4,7 @@ import { UsersService } from 'src/app/shared/user/users.service';
 import { User } from 'src/app/shared/user/user';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { Router } from '@angular/router';
+declare var require: any;
 
 @Component({
   selector: 'app-register',

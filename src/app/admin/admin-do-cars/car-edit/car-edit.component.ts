@@ -63,7 +63,7 @@ export class CarEditComponent implements OnInit {
   }
 
   passEditStatus(status: any){
-    this.editStatus.emit(status);
+    // this.editStatus.emit(status);
   }
 
   get f(){

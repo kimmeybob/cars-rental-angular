@@ -42,7 +42,7 @@ export class ViewRentalDetailComponent implements OnInit {
       this.cancel = false;  
     }
     else{
-      this.cancel = false;
+      this.cancel = true;
     }
   }
 
