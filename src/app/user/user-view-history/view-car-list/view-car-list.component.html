@@ -62,7 +62,10 @@
             <div style="background: none;height: 100%;">
                 <div class="grid-container" >
 
-                
+                <div *ngIf="isHistoryEmpty()" style="background: #F4F4F4;padding: 20px 20px 10px 0px">
+                    <p>You have no rent history available.</p>
+                </div>
+                    
     
             <div *ngFor="let hist of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;" (click)="onDetail(hist.rentID)" class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
                       <!-- <div *ngIf="isRentEmpty()" style="background: #F4F4F4;padding: 20px 20px 10px 20px">
@@ -111,7 +114,7 @@
     
     </div>
     
-        <div class="row" style="background:none;margin: auto;text-align: center;">
+        <div *ngIf="!isHistoryEmpty()" class="row" style="background:none;margin: auto;text-align: center;">
           <div style="margin: 50px;background: none;">
               <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>

@@ -67,6 +67,16 @@ export class UserViewHistoryComponent implements OnInit {
     this.selectedRentalHistory = null as any;
   }
 
+  isHistoryEmpty(): boolean{
+
+    if(this.historyList.length <= 0){
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
+
 
 
 }

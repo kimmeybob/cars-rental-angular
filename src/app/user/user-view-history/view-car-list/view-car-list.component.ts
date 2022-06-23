@@ -35,4 +35,14 @@ export class ViewCarListComponent implements OnInit {
     this.selectedHistory.emit(rentID);
   }
 
+  isHistoryEmpty(): boolean{
+
+    if(this.displayList.length <= 0){
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
+
 }

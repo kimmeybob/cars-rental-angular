@@ -1,38 +1,3 @@
-<!-- <div class="container">   
-    <div class="row">
-        <div class="col-12 card"
-                *ngFor="let rent of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;">
-                <div class="card-body">
-                    <div class="row justify-content-between">
-                        <div class="col-8">   
-                            <h5 class="card-title">
-                                <span style="margin-right: 10px;">
-                                    <i class="bi bi-truck"></i>
-                                </span>
-                                {{rent.carModel}}
-                            </h5>
-                            <p>
-                                <span id="addMarginRight"><i class="bi bi-calendar-date-fill" style="margin-right: 5px;"></i>{{rent.rentStartDate}}</span>
-                                <span id="addMarginRight">{{" | "}}</span><span class="addMarginRight">{{rent.rentEndDate}}</span>
-                            </p>
-                            <p class="card-text">
-                                <span id="addMarginRight"><i class="bi bi-house-fill" style="margin-right: 5px;"></i>{{rent.address}}</span>
-                            </p>
-                        </div>
-                        <div class="col-2">
-                            <button class="btn btn-dark" id="cardButtons" (click)="onDetail(rent.rentalID)">Details</button>
-                        </div>
-                    </div>  
-                </div>
-        </div>
-    </div>
-    <div class="row">
-        <div style="margin: 50px;">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>
-    </div>
-    
-</div> -->
 
 <div class="row">
 
@@ -46,22 +11,7 @@
         
         <!-- Filter Section -->
         <div style="background: none;width: 360px;padding: 20px;">
-            
-            <!-- <div style="margin-left: 10px;padding: 20px;width: calc(100% - (20px * 2));height: 210px;background: white;border: 1px solid #DDDDDD;overflow:hidden;">
-    
-                    <div style="font-size: 1.5rem;font-weight: bold;">Rentals Filter</div>
-                    <br />
-                    <div style="color: #7D7D7D;font-weight: bold;margin-bottom: 10px">Sort By</div>
-                    <div style="background: none;">
-                        <select (change)="onChangeViewSelection($event)" class="filterBar custom-select"  style="height: 48px;">
-                            <option disabled selected value style="display: none">Active Rentals</option>
-                            <option value="active">Active Rentals</option>
-                            <option value="history">Rental History</option>
-                          </select>
-                    </div>
-    
-            </div> -->
-    
+
         </div>
     
         <!-- Marketplace Section -->
@@ -77,14 +27,12 @@
             <div style="background: none;height: 100%;">
                 <div class="grid-container" >
 
-                
+                  <div *ngIf="isRentEmpty()" style="background: #F4F4F4;padding: 20px 20px 10px 0px">
+                    <p>You have no current rents available.</p>
+                  </div>
     
             <div *ngFor="let rent of displayList | paginate: {itemsPerPage: count, currentPage: p } index as i;" (click)="onDetail(rent.rentalID)" class="card item1" style="width: 225px;border: 1px solid #E2E2E2;background: white;">
-                      <!-- <div *ngIf="isRentEmpty()" style="background: #F4F4F4;padding: 20px 20px 10px 20px">
-                        <p>No current rents available.</p>
-                      </div> -->
-
-                      <!-- *ngIf="!isRentEmpty()" -->
+                      
 
                       <div  style="background: white;">
                         
@@ -126,7 +74,7 @@
     
     </div>
     
-        <div class="row" style="background:none;margin: auto;text-align: center;">
+        <div *ngIf="!isRentEmpty()" class="row" style="background:none;margin: auto;text-align: center;">
           <div style="margin: 50px;background: none;">
               <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
